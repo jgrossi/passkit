@@ -12,6 +12,3 @@ class Password extends PasswordGenerator
 
 }
 
-$password = Password::generate(8, array('numbers', 'letters'));
-echo $password . "\n";
-echo Password::check($password)."\n";
