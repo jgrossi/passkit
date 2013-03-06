@@ -1,0 +1,14 @@
+{
+    "name": "juniorgrossi/passkit",
+    "description": "Usefull classes to generate and manage passwords",
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "authors": [
+        {
+            "name": "Junior Grossi",
+            "email": "me@juniorgrossi.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
