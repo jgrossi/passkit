@@ -1,6 +1,8 @@
 {
     "name": "juniorgrossi/passkit",
     "description": "Usefull classes to generate and manage passwords",
+    "homepage": "http://github.com/juniorgrossi/passkit",
+    "license": "MIT",
     "require": {
         "php": ">=5.3.0"
     },
