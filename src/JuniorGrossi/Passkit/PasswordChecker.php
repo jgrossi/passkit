@@ -77,7 +77,7 @@ class PasswordChecker
     public function hasSymbols()
     {
         $symbols = PasswordGenerator::$chars['symbols'];
-        return strpos($this->password, str_split($symbols)) !== false;
+        return strpbrk($this->password, $symbols) !== false;
     }
 
     /**
@@ -141,7 +141,15 @@ class PasswordChecker
                 }
                 return 3;
             } elseif ($instance->hasNumbers()) {
+                if ($instance->hasSymbols()) {
+                    return 4;
+                }
                 return 2;
+            } elseif ($instance->hasLowercaseLetters() and $instance->hasUppercaseLetters()) {
+                if ($instance->hasSymbols()) {
+                    return 4;
+                }
+                return 3;
             }
             return 1;
         } elseif ($instance->hasLowercaseLetters() and $instance->hasNumbers()) {
