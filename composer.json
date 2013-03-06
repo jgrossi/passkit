@@ -15,7 +15,7 @@
     ],
     "autoload": {
         "psr-0": {
-            "JuniorGrossi\\Passkit": "src/"
+            "Passkit": "src/"
         }
     },
     "minimum-stability": "dev"
