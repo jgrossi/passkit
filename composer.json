@@ -7,8 +7,14 @@
     "authors": [
         {
             "name": "Junior Grossi",
-            "email": "me@juniorgrossi.com"
+            "email": "me@juniorgrossi.com",
+            "homepage": "http://juniorgrossi.com"
         }
     ],
+    "autoload": {
+        "psr-0": {
+            "JuniorGrossi\\Passkit": "src/"
+        }
+    },
     "minimum-stability": "dev"
 }

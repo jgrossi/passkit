@@ -3,7 +3,7 @@
 namespace JuniorGrossi\Passkit;
 
 /**
- * Generates a new password
+ * Generate a new password
  * 
  * @author Junior Grossi <me@juniorgrossi.com>
  * @package JuniorGrossi\Passkit

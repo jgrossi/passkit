@@ -15,7 +15,10 @@ class PasswordChecker
      */
     protected $password;
 
-    protected static $staticFilesPath = __DIR__ . '/../../../files';
+    /**
+     * Static file path. Used for dictionaries and keyboard patterns
+     */
+    protected $staticFilesPath = '../../../files';
 
     /**
      * Set the password inside constructor
@@ -23,6 +26,7 @@ class PasswordChecker
     public function __construct($password)
     {
         $this->password = $password;
+        $this->staticFilesPath = __DIR__ . '/' . $this->staticFilesPath;
     }
 
     /**
@@ -70,7 +74,7 @@ class PasswordChecker
      * 
      * @return bool
      */
-    public function hasSymbols($value='')
+    public function hasSymbols()
     {
         $symbols = PasswordGenerator::$chars['symbols'];
         return strpos($this->password, str_split($symbols)) !== false;
@@ -123,23 +127,25 @@ class PasswordChecker
      * 
      * @return int The number of security: 1 is bad, 5 is better
      */
-    public function check()
+    public static function check($password)
     {
-        if ($this->hasMinimalSize()) {
-            if ($this->hasLowercaseLetters() and $this->hasNumbers()) {
-                if ($this->hasUppercaseLetters()) {
-                    if ($this->hasSymbols()) {
+        $instance = new static($password);
+
+        if ($instance->hasMinimalSize()) {
+            if ($instance->hasLowercaseLetters() and $instance->hasNumbers()) {
+                if ($instance->hasUppercaseLetters()) {
+                    if ($instance->hasSymbols()) {
                         return 5;
                     }
                     return 4;
                 }
                 return 3;
-            } elseif ($this->hasNumbers()) {
+            } elseif ($instance->hasNumbers()) {
                 return 2;
             }
             return 1;
-        } elseif ($this->hasLowercaseLetters() and $this->hasNumbers()) {
-            if ($this->hasUppercaseLetters()) {
+        } elseif ($instance->hasLowercaseLetters() and $instance->hasNumbers()) {
+            if ($instance->hasUppercaseLetters()) {
                 return 3;
             }
             return 2;
@@ -147,5 +153,5 @@ class PasswordChecker
         return 1; 
     }
 
-
 }
+
