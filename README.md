@@ -32,7 +32,7 @@ You can see it in action.
 - [http://passkit.juniorgrossi.com/generate](http://passkit.juniorgrossi.com/generate)
 - [http://passkit.juniorgrossi.com/generate?length=20](http://passkit.juniorgrossi.com/generate?length=20)
 - [http://passkit.juniorgrossi.com/generate?length=15&using=letters](http://passkit.juniorgrossi.com/generate?length=15&using=letters)
-- [http://passkit.juniorgrossi.com/generate?length=15&using=letters,numbers,symbols](http://passkit.juniorgrossi.- com/generate?length=15&using=letters,numbers,symbols)
+- [http://passkit.juniorgrossi.com/generate?length=15&using=letters,numbers,symbols](http://passkit.juniorgrossi.com/generate?length=15&using=letters,numbers,symbols)
 
 ### Checking
 
