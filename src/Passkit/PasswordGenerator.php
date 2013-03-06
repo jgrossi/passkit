@@ -34,12 +34,12 @@ class PasswordGenerator
             $using = array('letters', 'numbers', 'symbols');
         }
 
-        $allowedChars = $instance->getAllowedChars($using);
+        $allowed_chars = $instance->getAllowedChars($using);
         $password = '';
 
         foreach (range(1, $length) as $step) {
-            $randomPosition = rand(0, strlen($allowedChars) - 1);
-            $password .= $allowedChars[$randomPosition];
+            $random_position = rand(0, strlen($allowed_chars) - 1);
+            $password .= $allowed_chars[$random_position];
         }
 
         return $password;
@@ -53,11 +53,13 @@ class PasswordGenerator
      */
     protected function getAllowedChars($allowed)
     {
+        $max_length = strlen(static::$chars['letters']);
         $string = '';
 
         foreach ($allowed as $type) {
             if (array_key_exists($type, static::$chars)) {
-                $string .= static::$chars[$type];
+                $chars = static::$chars[$type];
+                $string .= str_pad($chars, $max_length, $chars);
             }
         }
 
