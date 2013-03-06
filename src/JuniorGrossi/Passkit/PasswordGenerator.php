@@ -26,13 +26,15 @@ class PasswordGenerator
      * @param $using array The array values can be 'numbers', 'letters' and 'symbols'
      * @return string
      */
-    public function generate($length = 8, array $using = null)
+    public static function generate($length = 8, array $using = null)
     {
+        $instance = new static;
+
         if (empty($using)) {
             $using = array('letters', 'numbers', 'symbols');
         }
 
-        $allowedChars = $this->getAllowedChars($using);
+        $allowedChars = $instance->getAllowedChars($using);
         $password = '';
 
         foreach (range(1, $length) as $step) {
