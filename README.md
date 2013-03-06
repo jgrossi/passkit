@@ -23,6 +23,23 @@ You can use PasswordChecker class to verify how much is your password secure.
     Passkit\Password::check('1234'); // 1 (bad)
     Passkit\Password::check('12asDas$8*'); // 5 (great)
 
+## Demo
+
+You can see it in action.
+
+### Generating passwords
+
+- [http://passkit.juniorgrossi.com/generate](http://passkit.juniorgrossi.com/generate)
+- [http://passkit.juniorgrossi.com/generate?length=20](http://passkit.juniorgrossi.com/generate?length=20)
+- [http://passkit.juniorgrossi.com/generate?length=15&using=letters](http://passkit.juniorgrossi.com/generate?length=15&using=letters)
+- [http://passkit.juniorgrossi.com/generate?length=15&using=letters,numbers,symbols](http://passkit.juniorgrossi.- com/generate?length=15&using=letters,numbers,symbols)
+
+### Checking
+
+- [http://passkit.juniorgrossi.com/check?password=12345](http://passkit.juniorgrossi.com/check?password=12345)
+- [http://passkit.juniorgrossi.com/check?password=123Apsu793jGH](http://passkit.juniorgrossi.com/check?password=123Apsu793jGH)
+- [http://passkit.juniorgrossi.com/check?password=ija9H76h*a#](http://passkit.juniorgrossi.com/check?password=ija9H76h*a#)
+
     
 
     
